@@ -1,0 +1,197 @@
+body {
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: #CFD0CF;
+    color: #434344;
+}
+
+header {
+    padding: 40px;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 42px;
+    text-align: center;
+    margin: 0;
+}
+
+h3 {
+    font-size: 100px;
+    text-shadow: 2px 2px 5px#434344;
+    color: red;
+    position: absolute;
+    top: 20%;
+    left: 32%;
+}
+
+.jackInTheBox {
+    -webkit-animation-name: jackInTheBox;
+    animation-name: jackInTheBox;
+}
+
+main {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    perspective: 800px;
+    position: relative;
+}
+
+
+.card {
+    width: 130px;
+    height: 130px;
+    margin: 12.5px;
+    border: 5px solid #ffffff;
+    border-radius: 9px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.block {
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.back {
+    background: rgb(34, 171, 147);
+    background: -moz-linear-gradient(45deg, rgba(34, 171, 147, 1) 0%, rgba(115, 177, 231, 1) 100%, rgba(10, 119, 213, 1) 100%, rgba(83, 159, 225, 1) 100%, rgba(25, 102, 141, 1) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(34, 171, 147, 1) 0%, rgba(115, 177, 231, 1) 100%, rgba(10, 119, 213, 1) 100%, rgba(83, 159, 225, 1) 100%, rgba(25, 102, 141, 1) 100%);
+    background: linear-gradient(45deg, rgba(34, 171, 147, 1) 0%, rgba(115, 177, 231, 1) 100%, rgba(10, 119, 213, 1) 100%, rgba(83, 159, 225, 1) 100%, rgba(25, 102, 141, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#22ab93', endColorstr='#19668d', GradientType=1);
+    transform: rotateY(180deg);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.front {
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.rotate {
+    transform: rotateY(180deg);
+}
+
+.side {
+    backface-visibility: hidden;
+}
+
+@-webkit-keyframes rollOut {
+    /**/
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+    }
+    40% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+    60% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+    to {
+        opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+    }
+}
+
+@keyframes rollOut {
+    from {
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+    }
+    5% {
+        opacity: 0;
+        transform: translate3d(-60%, 0, 0) rotate3d(0, 0, 1, -120deg);
+    }
+    30% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+    70% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+    98% {
+        opacity: 0;
+        transform: translate3d(60%, 0, 0) rotate3d(0, 0, 1, 120deg);
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
+    }
+}
+
+.rollOut {
+    -webkit-animation-name: rollOut;
+    animation-name: rollOut;
+}
+
+.animated {
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes jackInTheBox {
+    from {
+        opacity: 0;
+        -webkit-transform: scale(0.1) rotate(30deg);
+        transform: scale(0.1) rotate(30deg);
+        -webkit-transform-origin: center bottom;
+        transform-origin: center bottom;
+    }
+    50% {
+        -webkit-transform: rotate(-10deg);
+        transform: rotate(-10deg);
+    }
+    70% {
+        -webkit-transform: rotate(3deg);
+        transform: rotate(3deg);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes jackInTheBox {
+    from {
+        opacity: 0;
+        -webkit-transform: scale(0.1) rotate(30deg);
+        transform: scale(0.1) rotate(30deg);
+        -webkit-transform-origin: center bottom;
+        transform-origin: center bottom;
+    }
+    50% {
+        -webkit-transform: rotate(-10deg);
+        transform: rotate(-10deg);
+    }
+    70% {
+        -webkit-transform: rotate(3deg);
+        transform: rotate(3deg);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+.green{
+    background-color: #5ad66f;
+}
+.red{
+    background-color: #f44336;
+}
