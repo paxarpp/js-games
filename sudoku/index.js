@@ -33,13 +33,15 @@ class Sudoku {
     return table;
   }
   addNumberInTable() {
-    for (let i = 0; i < Sudoku.ARR_ROW; i++) {
-      const arrTemp = [];
-      for (let j = 0; j < Sudoku.ARR_COL; j++) {
-        arrTemp.push(this.getNumber(i, j));
-      }
-      this.arrItems.push(arrTemp);
-    }
+    this.arrItems = Array.from(Array(Sudoku.ARR_ROW), (elem, x) => {
+      return Array.from(Array(Sudoku.ARR_COL), (elem, y) => {
+        let res = x + y + 1;
+        if (res >= Sudoku.ARR_COL + 1) {
+          res -= Sudoku.ARR_COL;
+        }
+        return res;
+      });
+    });
   }
   someClear() {
     for (let i = 0; i < Sudoku.ARR_ROW; i++) {
@@ -48,55 +50,6 @@ class Sudoku {
           this.arrItems[i][j] = '';
         }
       }
-    }
-  }
-  // начальный массив.
-  getNumber(i, j) {
-    switch (i) {
-      case 0:
-        return j + 1;
-      case 1:
-        if (j >= 6) {
-          return j - 5;
-        }
-        return j + 4;
-      case 2:
-        if (j >= 3) {
-          return j - 2;
-        }
-        return j + 7;
-      case 3:
-        if (j >= 8) {
-          return j - 7;
-        }
-        return j + 2;
-      case 4:
-        if (j >= 5) {
-          return j - 4;
-        }
-        return j + 5;
-      case 5:
-        if (j >= 2) {
-          return j - 1;
-        }
-        return j + 8;
-      case 6:
-        if (j >= 7) {
-          return j - 6;
-        }
-        return j + 3;
-      case 7:
-        if (j >= 4) {
-          return j - 3;
-        }
-        return j + 6;
-      case 8:
-        if (j >= 1) {
-          return j;
-        }
-        return j + 9;
-      default:
-        return 0;
     }
   }
   // транспаранция строк ,колонок, переворот таблицы
