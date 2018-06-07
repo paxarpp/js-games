@@ -1,0 +1,47 @@
+{
+  "name": "sudoku",
+  "version": "1.0.0",
+  "description": "React",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paxarpp/game.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paxarpp/game/issues"
+  },
+  "homepage": "https://github.com/paxarpp/game#readme",
+  "dependencies": {
+    "babel-eslint": "^8.2.3"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-jest": "^23.0.1",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-chai-friendly": "^0.4.1",
+    "eslint-plugin-jest": "^21.15.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "jest": "^23.1.0",
+    "mini-css-extract-plugin": "^0.4.0",
+    "prettier": "^1.12.1",
+    "style-loader": "^0.20.3",
+    "webpack": "^4.4.1",
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-server": "^3.1.1"
+  }
+}
